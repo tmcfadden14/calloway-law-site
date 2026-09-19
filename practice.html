@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice Areas — Calloway Law</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  .practice-body { background: #E4DFD3; }
+  .pa-note {
+    font-family: var(--font-body); font-style: italic; color: var(--sage-grey);
+    font-size: 14.5px; line-height: 1.6;
+    border-top: 1px solid var(--ink-faint); padding-top: 16px; margin: 4px 0 20px;
+  }
+  .pa-note a { color: var(--slate-navy); text-decoration: none; border-bottom: 1px solid var(--champagne-gold); padding-bottom: 1px; font-style: normal; }
+  .pa-note a:hover { border-bottom-width: 2px; }
+  .pa { max-width: 1120px; margin: 0 auto; padding: 0 56px; }
+  .pa-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+  }
+  .pa-card {
+    position: relative; background: #fff;
+    border-top: 3px solid var(--forest-green);
+    border-radius: 4px;
+    padding: 42px 42px 38px;
+    box-shadow: 0 16px 44px rgba(28,43,58,.07);
+    display: flex; flex-direction: column;
+    scroll-margin-top: 120px;
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .pa-card:hover { transform: translateY(-3px); box-shadow: 0 24px 56px rgba(28,43,58,.11); }
+  .pa-card.is-signature { border-top-color: var(--maroon); }
+  .pa-eyebrow {
+    font-family: var(--font-body); font-weight: 600; text-transform: uppercase;
+    letter-spacing: .2em; font-size: 12px; color: var(--champagne-gold); margin: 0 0 18px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .pa-eyebrow::after { content: ""; height: 1px; flex: 1; background: var(--ink-faint); }
+  .pa-card.is-signature .pa-eyebrow { color: var(--maroon); }
+  .pa-card h2 {
+    font-family: var(--font-display); font-weight: 500; color: var(--slate-navy);
+    font-size: clamp(24px, 2.5vw, 32px); line-height: 1.12; margin: 0 0 20px; letter-spacing: -0.012em;
+  }
+  .pa-card p {
+    font-family: var(--font-body); color: #3a4550;
+    font-size: 16.5px; line-height: 1.72; margin: 0 0 16px;
+  }
+  .pa-contact {
+    margin-top: auto; align-self: flex-start;
+    font-family: var(--font-body); font-size: 13px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--slate-navy); text-decoration: none;
+    border-bottom: 1px solid var(--champagne-gold); padding-bottom: 3px;
+    display: inline-block;
+  }
+  .pa-contact:hover { border-bottom-width: 2px; }
+  @media (max-width: 820px) {
+    .pa { padding: 0 26px; }
+    .pa-grid { grid-template-columns: 1fr; gap: 22px; }
+    .pa-card { padding: 34px 28px 30px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav" data-open="false">
+  <div class="nav-inner">
+    <a class="nav-mark" href="index.html">
+      <span class="nav-mark-name">Calloway Law</span>
+      <span class="nav-mark-sub">Public Interest Counsel</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-nav">
+      <a class="navlink" href="index.html#about">About</a>
+      <a class="navlink" href="attorney.html">Attorneys</a>
+      <a class="navlink" href="practice.html" aria-current="page">Practice</a>
+      <a class="nav-hbcu" href="practice.html#hbcu">1890 HBCU Cases</a>
+      <a class="navlink" href="engage.html">Contact</a>
+      <a class="nav-pine" href="../pinestreet/index.html">Pine Street Advisors <span class="ext" aria-hidden="true">↗</span></a>
+      <a class="nav-cta" href="engage.html">Engage Counsel</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-head" data-screen-label="Practice — Masthead">
+  <div class="ph-photo" style="background-image:url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=2000&q=80')"></div>
+  <div class="page-head-inner">
+    <div class="ph-rule"></div>
+    <p class="eyebrow">Practice</p>
+    <h1>Practice Areas</h1>
+    <p class="ph-sub">A deliberately narrow practice, concentrated where the work carries consequence.</p>
+  </div>
+</section>
+
+<section class="section practice-body" data-screen-label="Practice — Areas">
+  <div class="pa">
+    <div class="pa-grid">
+
+      <article class="pa-card is-signature" id="hbcu">
+        <p class="pa-eyebrow">Signature Matter</p>
+        <h2>The 1890 HBCU Cases</h2>
+        <p>The Second Morrill Act of 1890 established land-grant institutions for Black Americans excluded from the colleges created under the 1862 act — with a federal obligation to fund them commensurately, sustained across generations.</p>
+        <p>Calloway Law advises and represents interests connected to the accountability of the public bodies charged with meeting those commitments to the nation's nineteen 1890 land-grant HBCUs — matters institutional in scope, concerning the legal obligations of government and the consequences of inequitable federal policy.</p>
+        <a class="pa-contact" href="engage.html">Inquire about this matter</a>
+      </article>
+
+      <article class="pa-card" id="litigation">
+        <p class="pa-eyebrow">Practice 01</p>
+        <h2>Public Interest Litigation</h2>
+        <p>Constitutional and civil rights litigation — with concentrations in civil rights, environmental justice, and consumer protection — brought in state and federal courts, at trial and on appeal.</p>
+        <p>The firm takes cases whose resolution will matter after the case is over: where the law is unsettled, an institution has failed, or a community has been denied the accountability it is owed. Consequence, not volume, is the measure.</p>
+        <a class="pa-contact" href="engage.html">Discuss a litigation matter</a>
+      </article>
+
+      <article class="pa-card" id="government">
+        <p class="pa-eyebrow">Practice 02</p>
+        <h2>Government Affairs Counsel</h2>
+        <p>Counsel for clients whose interests engage the machinery of government — legislation, regulatory posture, agency engagement, and the conduct of public institutions.</p>
+        <p>The advice is grounded in direct experience inside government and major American companies: how decisions actually move through agencies, legislatures, and executive offices. Candid assessment and clear strategy, free of bluster.</p>
+        <p class="pa-note">Calloway Law conducts our non-legal Government Affairs advisory matters through our public affairs consulting firm, <a href="../pinestreet/index.html">Pine Street Advisors</a>.</p>
+        <a class="pa-contact" href="engage.html">Discuss a government affairs matter</a>
+      </article>
+
+      <article class="pa-card" id="advisory">
+        <p class="pa-eyebrow">Practice 03</p>
+        <h2>Strategic Legal Advisory</h2>
+        <p>Discreet, high-judgment counsel for organizations and principals navigating consequential decisions — governance, risk, exposure, and long-term positioning.</p>
+        <p>Not a clearinghouse for general counsel work, but an advisor with command of the legal, political, and institutional dimensions of a problem — and the confidence to speak candidly about all three.</p>
+        <a class="pa-contact" href="engage.html">Discuss an advisory engagement</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer" data-screen-label="Practice — Footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-mark">Calloway Law</div>
+      <p>Public Interest Counsel.</p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="practice.html">Practice Areas</a></li>
+        <li><a href="attorney.html">Attorneys</a></li>
+        <li><a href="engage.html">Engage Counsel</a></li>
+        <li><a href="disclosure.html">Attorney Advertising</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:dcalloway@gmail.com">dcalloway@gmail.com</a></li>
+        <li>(314)&nbsp;555-0140</li>
+        <li>St. Louis, Missouri</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-id">
+    <div class="id-lines">
+      <strong>Calloway Law&nbsp;&nbsp;|&nbsp;&nbsp;Public Interest Counsel</strong><br>
+      Donald Calloway, Jr.<br>
+      Admitted in Alabama, Illinois, and Missouri
+    </div>
+    <div class="id-meta">
+      © 2026 Calloway Law. All rights reserved.<br>
+      <a href="disclosure.html" style="color:var(--sage-grey);text-decoration:none;border-bottom:1px solid rgba(200,169,81,.4);">Attorney Advertising Disclosure</a>
+    </div>
+  </div>
+  <div class="footer-cities">Anniston, AL<span class="sep">·</span>St. Louis, MO<span class="sep">·</span>Washington, D.C.</div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

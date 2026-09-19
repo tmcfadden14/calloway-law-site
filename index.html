@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calloway Law — Counsel for the Public Interest</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  /* ================= HERO ================= */
+  .hero { position: relative; min-height: 78vh; display: flex; align-items: center; overflow: hidden; background: var(--slate-navy); }
+  .hero-photo {
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?w=2000&q=80') center/cover no-repeat;
+    filter: grayscale(.4) contrast(1.03);
+    transform: scale(1.04);
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+      linear-gradient(90deg, rgba(18,28,38,.96) 0%, rgba(18,28,38,.82) 44%, rgba(18,28,38,.5) 100%),
+      linear-gradient(0deg, rgba(18,28,38,.85) 0%, rgba(18,28,38,0) 32%);
+  }
+  .hero-inner { position: relative; z-index: 2; max-width: var(--maxw); margin: 0 auto; padding: 0 56px; width: 100%; }
+  .hero-block { border-left: 5px solid var(--forest-green); padding-left: 48px; max-width: 900px; }
+  .hero-kicker {
+    font-family: var(--font-body); font-weight: 600; text-transform: uppercase;
+    letter-spacing: .32em; font-size: 12px; color: var(--champagne-gold); margin: 0 0 30px;
+  }
+  .hero h1 {
+    font-family: var(--font-display); font-weight: 400;
+    color: #fff; font-size: clamp(52px, 8vw, 104px); line-height: .94;
+    letter-spacing: -0.02em; margin: 0; text-wrap: balance;
+  }
+  .hero .subhead {
+    font-family: var(--font-serif); font-style: italic; font-weight: 300;
+    color: var(--champagne-gold); font-size: clamp(24px, 3.4vw, 40px); margin: 26px 0 0; line-height: 1.15;
+  }
+  .hero-jx {
+    font-family: var(--font-body); font-weight: 500;
+    color: rgba(255,255,255,.72); font-size: clamp(13px, 1.5vw, 16px);
+    letter-spacing: .26em; text-transform: uppercase; margin: 14px 0 0;
+  }
+  .hero-jx span { color: var(--champagne-gold); margin: 0 12px; }
+  .hero .tagline {
+    font-family: var(--font-body); font-weight: 400;
+    color: rgba(255,255,255,.66); font-size: clamp(15px, 1.7vw, 19px);
+    margin: 18px 0 0; letter-spacing: .02em; max-width: 46ch;
+  }
+  .hero-rule { width: 96px; height: 0; border-top: 3px solid var(--champagne-gold); margin: 44px 0 40px; }
+  .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .hero-foot {
+    position: absolute; z-index: 2; left: 0; right: 0; bottom: 34px;
+    display: flex; justify-content: center;
+  }
+  .hero-foot span {
+    font-family: var(--font-body); font-size: 11px; letter-spacing: .3em;
+    text-transform: uppercase; color: rgba(255,255,255,.42);
+  }
+
+  /* ================= POSITIONING STATEMENT ================= */
+  .statement { background: var(--paper); }
+  .statement-wrap { max-width: 1040px; margin: 0 auto; padding: 0 56px; }
+  .statement .lead {
+    font-family: var(--font-display); font-weight: 400;
+    color: var(--slate-navy); font-size: clamp(28px, 4vw, 52px);
+    line-height: 1.22; letter-spacing: -0.015em; margin: 0; text-wrap: balance;
+  }
+  .statement .lead em { font-style: italic; color: var(--forest-green); }
+  .statement .sub {
+    font-family: var(--font-body); color: var(--sage-grey);
+    font-size: 18px; line-height: 1.75; margin: 34px 0 0; max-width: 64ch;
+  }
+
+  /* ================= PRACTICE CARDS ================= */
+  .practice { background: #fff; border-top: 1px solid var(--ink-faint); }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 60px; border-top: 1px solid var(--ink-faint); }
+  .card {
+    position: relative; background: #fff;
+    border-top: 3px solid var(--forest-green);
+    border-right: 1px solid var(--ink-faint);
+    padding: 44px 40px 40px; min-height: 420px;
+    display: flex; flex-direction: column;
+    transition: background .3s ease, transform .3s ease;
+  }
+  .card:last-child { border-right: 0; }
+  .card:hover { background: var(--paper); }
+  .card .num {
+    font-family: var(--font-display); font-weight: 400; font-style: italic;
+    font-size: 40px; color: var(--champagne-gold); line-height: 1; margin-bottom: 30px;
+  }
+  .card h3 {
+    font-family: var(--font-display); font-weight: 500; color: var(--slate-navy);
+    font-size: 27px; line-height: 1.16; margin: 0 0 20px; letter-spacing: -0.01em;
+  }
+  .card p { font-family: var(--font-body); color: #3a4550; font-size: 16px; line-height: 1.7; margin: 0 0 20px; }
+  .card .card-note { font-style: italic; color: var(--sage-grey); font-size: 13.5px; line-height: 1.55; margin: 0 0 28px; }
+  .card .card-note a { color: var(--slate-navy); text-decoration: none; border-bottom: 1px solid var(--champagne-gold); font-style: normal; }
+  .card .card-link {
+    margin-top: auto; align-self: flex-start;
+    font-family: var(--font-body); font-weight: 600; font-size: 12px;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--slate-navy);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+  }
+  .card .card-link .arw { color: var(--champagne-gold); transition: transform .25s ease; }
+  .card:hover .card-link .arw { transform: translateX(5px); }
+
+  /* ================= BIOGRAPHY ================= */
+  .bio { position: relative; background: var(--slate-navy); overflow: hidden; }
+  .bio-grid {
+    max-width: var(--maxw); margin: 0 auto; padding: 0 56px;
+    display: grid; grid-template-columns: 400px 1fr; gap: 76px; align-items: center;
+  }
+  .headshot {
+    position: relative; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden;
+    background:
+      linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.01)),
+      var(--slate-navy-90);
+    border: 1px solid rgba(200,169,81,.4);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,.4);
+  }
+  .headshot::before {
+    content: ""; position: absolute; inset: 12px; border: 1px solid rgba(200,169,81,.28);
+    pointer-events: none;
+  }
+  .headshot span {
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    color: rgba(255,255,255,.4); text-align: center; line-height: 1.8;
+  }
+  .bio-text .eyebrow { color: var(--champagne-gold); }
+  .bio-text h2 {
+    font-family: var(--font-display); font-weight: 500; color: #fff;
+    font-size: clamp(30px, 3.6vw, 46px); line-height: 1.1; margin: 0 0 8px; letter-spacing: -0.015em;
+  }
+  .bio-text .role {
+    font-family: var(--font-serif); font-style: italic; font-weight: 300;
+    color: rgba(255,255,255,.6); font-size: 19px; margin: 0 0 30px;
+  }
+  .bio-text p { font-family: var(--font-body); color: rgba(255,255,255,.8); font-size: 17px; line-height: 1.78; margin: 0 0 22px; max-width: 58ch; }
+  .bio-cta { margin-top: 16px; }
+
+  /* ================= FULL-BLEED QUOTE ================= */
+  .quote { position: relative; overflow: hidden; }
+  .quote-photo {
+    position: absolute; inset: 0;
+    background: url('img/mose.jpeg') center 22%/cover no-repeat;
+    filter: grayscale(.6) contrast(1.02) brightness(.92) sepia(.12);
+  }
+  .quote::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(16,25,34,.8) 0%, rgba(16,25,34,.52) 55%, rgba(16,25,34,.34) 100%); }
+  .quote-wrap { position: relative; z-index: 2; max-width: 1040px; margin: 0 auto; padding: 150px 56px; }
+  blockquote.pullquote { border-left: 4px solid var(--champagne-gold); padding: 8px 0 8px 44px; margin: 0; max-width: 42ch; }
+  blockquote.pullquote p {
+    font-family: var(--font-display); font-style: italic; font-weight: 300;
+    color: #fff; font-size: clamp(20px, 2.3vw, 31px); line-height: 1.42; margin: 0; letter-spacing: -0.005em;
+  }
+  blockquote.pullquote cite {
+    display: block; margin-top: 30px; font-style: normal;
+    font-family: var(--font-body); font-weight: 600; font-size: 12px; letter-spacing: .22em;
+    text-transform: uppercase; color: var(--champagne-gold);
+  }
+
+  /* ================= DESK BAND ================= */
+  .deskband { position: relative; background: var(--slate-navy); border-top: 3px solid var(--champagne-gold); border-bottom: 3px solid var(--champagne-gold); }
+  .deskband img { width: 100%; display: block; filter: grayscale(.55) saturate(.55) contrast(.94) brightness(.82); }
+  .deskband::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, rgba(28,43,58,.42), rgba(28,43,58,.58));
+    mix-blend-mode: multiply;
+  }
+
+  /* ================= IN THE NEWS ================= */
+  .news { background: var(--paper); }
+  .news-list { max-width: var(--maxw); margin: 54px auto 0; padding: 0 56px; border-top: 1px solid var(--ink-faint); }
+  .news-item { display: grid; grid-template-columns: 190px 1fr auto; gap: 44px; align-items: baseline; padding: 36px 0; border-bottom: 1px solid var(--ink-faint); transition: background .25s ease; }
+  .news-item .meta { font-family: var(--font-body); font-weight: 600; text-transform: uppercase; letter-spacing: .16em; font-size: 12px; color: var(--sage-grey); line-height: 1.5; }
+  .news-item .meta .outlet { display: block; color: var(--champagne-gold); margin-top: 7px; }
+  .news-item h3 { font-family: var(--font-display); font-weight: 500; color: var(--slate-navy); font-size: clamp(21px, 2.2vw, 28px); line-height: 1.24; margin: 0 0 9px; letter-spacing: -0.01em; }
+  .news-item p { font-family: var(--font-body); color: #3a4550; font-size: 15px; line-height: 1.65; margin: 0; max-width: 62ch; }
+  .news-item .readlink { font-family: var(--font-body); font-weight: 600; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--slate-navy); text-decoration: none; white-space: nowrap; display: inline-flex; gap: 9px; align-items: center; }
+  .news-item .readlink .arw { color: var(--champagne-gold); transition: transform .25s ease; }
+  .news-item .readlink:hover .arw { transform: translateX(4px); }
+  @media (max-width: 860px) {
+    .news-list { padding: 0 26px; }
+    .news-item { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
+  }
+
+  /* ================= GOLD CTA ================= */
+  .cta-band { background: #C7B78B; position: relative; }
+  .cta-inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 76px 56px;
+    display: flex; align-items: center; justify-content: space-between; gap: 48px;
+  }
+  .cta-band h2 {
+    font-family: var(--font-display); font-weight: 500; color: var(--slate-navy);
+    font-size: clamp(28px, 3.4vw, 44px); line-height: 1.12; margin: 0; max-width: 20ch; letter-spacing: -0.01em;
+  }
+
+  @media (max-width: 860px) {
+    .hero { min-height: 86vh; }
+    .hero-block { padding-left: 26px; border-left-width: 4px; }
+    .hero-foot { display: none; }
+    .statement-wrap { padding: 0 26px; }
+    .cards { grid-template-columns: 1fr; margin-top: 40px; }
+    .card { min-height: 0; border-right: 0; border-bottom: 1px solid var(--ink-faint); }
+    .bio-grid { grid-template-columns: 1fr; gap: 44px; padding: 0 26px; }
+    .headshot { max-width: 300px; }
+    .quote-wrap { padding: 96px 26px; }
+    blockquote.pullquote { padding-left: 26px; }
+    .cta-inner { flex-direction: column; align-items: flex-start; padding: 56px 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav" data-open="false" data-screen-label="Home — Nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="index.html">
+      <span class="nav-mark-name">Calloway Law</span>
+      <span class="nav-mark-sub">Public Interest Counsel</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-nav">
+      <a class="navlink" href="index.html#about" aria-current="page">About</a>
+      <a class="navlink" href="attorney.html">Attorneys</a>
+      <a class="navlink" href="practice.html">Practice</a>
+      <a class="nav-hbcu" href="practice.html#hbcu">1890 HBCU Cases</a>
+      <a class="navlink" href="engage.html">Contact</a>
+      <a class="nav-pine" href="../pinestreet/index.html">Pine Street Advisors <span class="ext" aria-hidden="true">↗</span></a>
+      <a class="nav-cta" href="engage.html">Engage Counsel</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" data-screen-label="Home — Hero">
+  <div class="hero-photo"></div>
+  <div class="hero-inner">
+    <div class="hero-block">
+      <p class="hero-kicker">Civil Rights · Institutional Accountability</p>
+      <h1>Calloway&nbsp;Law</h1>
+      <p class="subhead">Public Interest Counsel.</p>
+      <p class="hero-jx">Alabama<span>|</span>Illinois<span>|</span>Missouri</p>
+      <p class="tagline">Counsel for the public interest — retained for the matters whose outcomes are felt long after the courtroom empties.</p>
+      <div class="hero-rule"></div>
+      <div class="hero-actions">
+        <a class="btn btn--gold" href="engage.html">Engage Counsel <span class="arw">→</span></a>
+        <a class="btn btn--ghost-light" href="practice.html">The Practice</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POSITIONING STATEMENT ===== -->
+<section class="section statement" id="about" data-screen-label="Home — Statement">
+  <div class="statement-wrap">
+    <p class="lead reveal">A boutique practice built for the cases that <em>matter</em> — brought with the discipline of an advocate who has argued before courts that shape the law.</p>
+    <p class="sub reveal" data-delay="1">Calloway Law is a boutique public interest practice focused on civil rights, environmental justice, and consumer protection cases. The docket is deliberately narrow. Every matter is taken on its merits, and pursued with the seriousness its consequence demands.</p>
+  </div>
+</section>
+
+<!-- ===== PRACTICE AREAS ===== -->
+<section class="section practice" data-screen-label="Home — Practice Areas">
+  <div class="sec-head">
+    <div class="sec-rule reveal"></div>
+    <p class="eyebrow reveal">Practice</p>
+    <h2 class="sec-title reveal">Where the firm concentrates its work</h2>
+  </div>
+  <div class="shell">
+    <div class="cards">
+      <article class="card reveal">
+        <div class="num">01</div>
+        <h3>Public Interest Litigation</h3>
+        <p>Constitutional and civil-rights matters brought on behalf of individuals and communities that established power has failed. The firm appears at trial and on appeal, in state and federal courts, where the outcome carries consequence beyond the parties.</p>
+        <a class="card-link" href="practice.html#litigation">Read more <span class="arw">→</span></a>
+      </article>
+      <article class="card reveal" data-delay="1">
+        <div class="num">02</div>
+        <h3>Government Affairs Counsel</h3>
+        <p>Strategic counsel at the intersection of law and public policy — advising on legislation, regulatory posture, and the conduct of public institutions. Measured guidance for clients whose interests meet the machinery of government.</p>
+        <p class="card-note">Non-legal Government Affairs advisory is conducted through our public affairs consulting firm, <a href="../pinestreet/index.html">Pine Street Advisors</a>.</p>
+        <a class="card-link" href="practice.html#government">Read more <span class="arw">→</span></a>
+      </article>
+      <article class="card reveal" data-delay="2">
+        <div class="num">03</div>
+        <h3>Strategic Legal Advisory</h3>
+        <p>Discreet, high-judgment advisory for organizations and principals navigating consequential decisions. Risk, governance, and the long view — counsel offered with candor and without bluster.</p>
+        <a class="card-link" href="practice.html#advisory">Read more <span class="arw">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BIOGRAPHY ===== -->
+<section class="section bio" data-screen-label="Home — Biography">
+  <div class="bio-grid">
+    <div class="headshot reveal"><img src="img/dc-headshot.jpeg" alt="Donald Calloway, Jr." style="width:100%;height:100%;object-fit:cover;"></div>
+    <div class="bio-text reveal" data-delay="1">
+      <p class="eyebrow">Our Founder</p>
+      <h2>Donald Calloway, Jr.</h2>
+      <p class="role">Principal · Public Interest Counsel</p>
+      <p>Calloway Law is a boutique public interest practice focused on civil rights, environmental justice, and consumer protection cases — led by Donald Calloway, Jr., counsel whose work sits at the intersection of institutional accountability and consequential litigation.</p>
+      <p>The firm represents communities and individuals that corporate and government power has failed, and brings to each matter the discipline of an advocate who has argued before courts that matter.</p>
+      <div class="bio-cta"><a class="btn btn--ghost-light" href="attorney.html">Full Biography <span class="arw">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FULL-BLEED PULLQUOTE ===== -->
+<section class="quote" data-screen-label="Home — Pullquote">
+  <div class="quote-photo"></div>
+  <div class="quote-wrap">
+    <blockquote class="pullquote reveal">
+      <p>Calloway Law practices law in the public interest by creating institutional accountability. We represent individuals, businesses, and communities in matters of consequence, bringing disciplined legal judgment, institutional insight, and principled advocacy to every engagement. Our mission is to ensure that power remains accountable, justice remains attainable, and the law serves the people it was created to protect.</p>
+      <cite>Calloway Law — Our Mission</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ===== DESK BAND ===== -->
+<section class="deskband" data-screen-label="Home — Desk">
+  <img src="img/morning-joe.jpeg" alt="Donald Calloway, Jr. — national commentary">
+</section>
+
+<!-- ===== IN THE NEWS ===== -->
+<section class="section news" id="news" data-screen-label="Home — In the News">
+  <div class="sec-head">
+    <div class="sec-rule reveal"></div>
+    <p class="eyebrow reveal">In the News</p>
+    <h2 class="sec-title reveal">The firm in the public record</h2>
+  </div>
+  <div class="news-list">
+    <!-- To post an update, copy one .news-item block and edit the date, outlet, headline, summary, and link. -->
+    <article class="news-item reveal">
+      <div class="meta">June 2026<span class="outlet">National Broadcast</span></div>
+      <div>
+        <h3>Calloway on institutional accountability and the public interest</h3>
+        <p>National commentary on the obligations of public institutions and the role of counsel in holding them to account.</p>
+      </div>
+      <a class="readlink" href="#">Watch <span class="arw">→</span></a>
+    </article>
+    <article class="news-item reveal">
+      <div class="meta">May 2026<span class="outlet">1890 HBCU Cases</span></div>
+      <div>
+        <h3>Firm advances litigation on behalf of the 1890 land-grant institutions</h3>
+        <p>An update on the firm's representation in matters concerning the nation's historically Black land-grant universities.</p>
+      </div>
+      <a class="readlink" href="practice.html#hbcu">Read <span class="arw">→</span></a>
+    </article>
+    <article class="news-item reveal">
+      <div class="meta">April 2026<span class="outlet">Commentary</span></div>
+      <div>
+        <h3>On the machinery of government and the public's recourse to the courts</h3>
+        <p>Published commentary on how institutions make decisions — and how they are held answerable for them.</p>
+      </div>
+      <a class="readlink" href="#">Read <span class="arw">→</span></a>
+    </article>
+  </div>
+</section>
+
+<!-- ===== GOLD CTA BAND ===== -->
+<section class="cta-band" data-screen-label="Home — CTA">
+  <div class="cta-inner">
+    <h2>Allow us to serve you.</h2>
+    <a class="btn btn--navy" href="engage.html">Contact Calloway Law <span class="arw">→</span></a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" data-screen-label="Home — Footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-mark">Calloway Law</div>
+      <p>Counsel for the Public Interest.</p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="practice.html">Practice Areas</a></li>
+        <li><a href="attorney.html">Attorneys</a></li>
+        <li><a href="engage.html">Engage Counsel</a></li>
+        <li><a href="disclosure.html">Attorney Advertising</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:dcalloway@gmail.com">dcalloway@gmail.com</a></li>
+        <li>(314)&nbsp;555-0140</li>
+        <li>St. Louis, Missouri</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-id">
+    <div class="id-lines">
+      <strong>Calloway Law&nbsp;&nbsp;|&nbsp;&nbsp;Public Interest Counsel</strong><br>
+      Donald Calloway, Jr.<br>
+      Admitted in Alabama, Illinois, and Missouri
+    </div>
+    <div class="id-meta">
+      © 2026 Calloway Law. All rights reserved.<br>
+      <a href="disclosure.html" style="color:var(--sage-grey);text-decoration:none;border-bottom:1px solid rgba(200,169,81,.4);">Attorney Advertising Disclosure</a>
+    </div>
+  </div>
+  <div class="footer-cities">Anniston, AL<span class="sep">·</span>St. Louis, MO<span class="sep">·</span>Washington, D.C.</div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
