@@ -361,28 +361,12 @@ a { color: inherit; }
    RESPONSIVE — nav collapses to hamburger below 1024
    ============================================================ */
 @media (max-width: 1279px) and (min-width: 861px) {
-  .nav-toggle { display: block; }
-  .nav-nav {
-    position: absolute; top: 88px; left: 0; right: 0;
-    flex-direction: column; align-items: stretch; gap: 0;
-    background: rgba(24,37,50,.98);
-    border-bottom: 1px solid rgba(255,255,255,.1);
-    padding: 6px 0 18px;
-    max-height: 0; overflow: hidden;
-    transition: max-height .34s ease;
-  }
-  .nav[data-open="true"] .nav-nav { max-height: 540px; }
-  .nav-links { flex-direction: column; align-items: stretch; gap: 0; width: 100%; }
-  .nav-links a { display: block; padding: 15px 40px; }
-  .nav-links a::after { display: none; }
-  .nav-nav .navlink { display: block; padding: 15px 40px; text-align: left; }
-  .nav-nav .navlink::after { display: none; }
-  .nav-hbcu, .nav-cta { margin: 12px 40px 0; justify-content: center; }
-  .nav-pine { margin: 12px 40px 0; padding: 15px 0; justify-content: center; }
+  .nav-inner { height: auto; flex-wrap: wrap; row-gap: 14px; padding-top: 18px; padding-bottom: 16px; }
+  .nav-nav { width: 100%; justify-content: space-between; gap: 14px; flex-wrap: wrap; border-top: 1px solid rgba(200,169,81,.24); padding-top: 14px; }
+  .nav-nav .navlink { font-size: 12px; letter-spacing: .12em; }
+  .nav-pine { font-size: 12px; padding-left: 0; }
   .nav-pine::before { display: none; }
-  .nav[data-open="true"] .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav[data-open="true"] .nav-toggle span:nth-child(2) { opacity: 0; }
-  .nav[data-open="true"] .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-cta { display: none; }
 }
 
 /* ============================================================
@@ -396,31 +380,13 @@ a { color: inherit; }
   .nav-inner { height: 68px; }
   .nav-mark-name { font-size: 17px; letter-spacing: .18em; }
   .nav-mark-sub { font-size: 8px; letter-spacing: .22em; }
-  .nav-toggle { display: block; }
-  .nav-nav {
-    position: absolute; top: 68px; left: 0; right: 0;
-    flex-direction: column; align-items: stretch; gap: 0;
-    background: rgba(24,37,50,.98);
-    border-bottom: 1px solid rgba(255,255,255,.1);
-    padding: 6px 0 18px;
-    max-height: 0; overflow: hidden;
-    transition: max-height .34s ease;
-  }
-  .nav[data-open="true"] .nav-nav { max-height: 480px; }
-  .nav-links { flex-direction: column; align-items: stretch; gap: 0; width: 100%; }
-  .nav-links a { display: block; padding: 15px 26px; border-left: 3px solid transparent; }
-  .nav-links a::after { display: none; }
-  .nav-links a[aria-current="page"] { border-left-color: var(--champagne-gold); }
-  .nav-nav .navlink { display: block; padding: 15px 26px; border-left: 3px solid transparent; text-align: left; }
-  .nav-nav .navlink::after { display: none; }
-  .nav-nav .navlink[aria-current="page"] { border-left-color: var(--champagne-gold); }
-  .nav-cta { margin: 12px 26px 0; text-align: center; }
-  .nav-hbcu { margin: 12px 26px 0; justify-content: center; }
-  .nav-pine { margin: 4px 26px 0; padding: 15px 0; justify-content: center; }
+  .nav-inner { height: auto; flex-wrap: wrap; row-gap: 10px; padding-top: 14px; padding-bottom: 12px; }
+  .nav-nav { width: 100%; flex-wrap: wrap; justify-content: flex-start; gap: 10px 20px; border-top: 1px solid rgba(200,169,81,.24); padding-top: 12px; }
+  .nav-nav .navlink { font-size: 12px; letter-spacing: .12em; padding: 6px 0; }
+  .nav-hbcu { font-size: 12px; }
+  .nav-pine { font-size: 12px; padding-left: 0; }
   .nav-pine::before { display: none; }
-  .nav[data-open="true"] .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav[data-open="true"] .nav-toggle span:nth-child(2) { opacity: 0; }
-  .nav[data-open="true"] .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-cta { display: none; }
 
   .page-head-inner { padding: 56px 26px 44px; }
 
@@ -428,3 +394,7 @@ a { color: inherit; }
   .footer-id { flex-direction: column; align-items: flex-start; }
   .footer-id .id-meta { text-align: left; }
 }
+
+.vanity { display: inline-flex; align-items: flex-start; text-decoration: none; }
+.vanity .vl { display: inline-flex; flex-direction: column; align-items: center; line-height: 1; }
+.vanity .vd { font-family: var(--font-body); font-size: 12px; letter-spacing: 0; line-height: 1; margin-top: 6px; color: var(--sage-grey); }
