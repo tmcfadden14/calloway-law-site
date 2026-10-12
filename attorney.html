@@ -18,9 +18,13 @@
     background: linear-gradient(180deg, rgba(215,223,232,.35) 0%, rgba(28,43,58,.14) 100%);
   }
   .column { position: relative; z-index: 2; max-width: 1120px; margin: 0 auto; padding: 0 56px; }
-  .page-head-inner { padding: 34px 56px 26px; }
-  .page-head .ph-rule { margin-bottom: 14px; }
-  .page-head .eyebrow { margin-bottom: 10px; }
+  .page-head { min-height: 0 !important; }
+  .page-head-inner { padding: 20px 56px 16px; }
+  .page-head .ph-rule { margin-bottom: 8px; }
+  .page-head .eyebrow { margin: 0 0 4px; }
+  .page-head h1 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; margin: 0 0 4px; }
+  .page-head .ph-sub { margin: 0; font-size: 17px; }
+  .group-head .column { padding-top: 18px !important; padding-bottom: 14px !important; }
   .group-head { background: var(--paper); border-bottom: 1px solid var(--ink-faint); }
   .group-head .column { padding-top: 26px; padding-bottom: 22px; display: flex; align-items: baseline; gap: 18px; }
   .group-head h2 { font-family: var(--font-display); font-weight: 700; color: var(--slate-navy); font-size: 15px; letter-spacing: .18em; text-transform: uppercase; margin: 0; }
@@ -45,7 +49,7 @@
   .bar-list .det { color: var(--sage-grey); font-size: 13px; letter-spacing: .04em; white-space: nowrap; flex-shrink: 0; }
   @media (max-width: 860px) {
     .column { padding: 0 26px; }
-    .page-head-inner { padding: 28px 26px 22px; }
+    .page-head-inner { padding: 16px 26px 14px; }
     .group-head .column { padding-left: 26px; padding-right: 26px; }
     .profile { grid-template-columns: 1fr; gap: 22px; }
     .p-side { max-width: 380px; }
@@ -202,6 +206,41 @@
   </div>
 </section>
 
+<section class="section editorial" data-screen-label="Attorney — Tonya McAlpine-Morris">
+  <div class="ed-bg" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80');"></div>
+  <div class="ed-tint"></div>
+  <div class="column profile">
+    <aside class="p-side">
+      <div class="att-headshot"><img src="img/tonya-framed-v2.jpg" alt="Tonya McAlpine-Morris"></div>
+      <p class="att-email"><a class="cl-inline-link" href="mailto:tonya@calloway.law">tonya@calloway.law</a></p>
+      <div class="bar-block">
+        <h4>Bar Admissions</h4>
+        <ul class="bar-list">
+          <li><span class="jx">Missouri</span><span class="det">Admitted</span></li>
+        </ul>
+      </div>
+      <div class="bar-block">
+        <h4>Education</h4>
+        <ul class="bar-list">
+          <li><span class="jx">Morris Brown College</span><span class="det">Undergraduate</span></li>
+          <li><span class="jx">Maryville University</span><span class="det">Nursing</span></li>
+          <li><span class="jx">Washington University School of Law</span><span class="det">Law School</span></li>
+        </ul>
+      </div>
+    </aside>
+    <div class="p-body">
+      <h3 class="name">Tonya McAlpine-Morris, JD, BSN, RN</h3>
+      <p class="role">Principal</p>
+      <p class="lede">Tonya M. Morris is a multidisciplinary Nurse Attorney whose career integrates more than twenty years of legal practice with eight years of clinical nursing experience. A graduate of Washington University School of Law in St. Louis, Missouri, Tonya brings a powerful dual-disciplinary perspective to her work as founder of the Law Office of Tonya M. McAlpine, LLC.</p>
+      <p>Her practice is distinguished by trauma-informed advocacy, strategic legal analysis, and the ability to interpret complex medical and behavioral-health information in cases involving family law, school law, and personal injury.</p>
+      <p>Tonya&rsquo;s nursing background includes extensive experience in mental health, neurology, medical-surgical care, cognitive research, crisis intervention, and enterprise risk management. Her clinical work in high-acuity psychiatric environments and her leadership in risk management strengthen her ability to assess safety concerns, evaluate medical documentation, and navigate cases involving injury, trauma, or vulnerable populations. This multidisciplinary foundation enhances her litigation strategy and equips her to support clients facing both legal and clinical challenges.</p>
+      <p>A committed community advocate, Tonya is the Founder &amp; Executive Director of Emphasis Empowerment, Inc., a nonprofit dedicated to suicide awareness, crisis support, and mental-health education. She has been formally recognized by the City of St. Louis for her leadership in suicide-prevention programming and continues to integrate therapeutic communication and trauma-informed principles into her legal practice.</p>
+      <p>A proud St. Louis native, Tonya&rsquo;s educational journey reflects her deep commitment to justice, service, and community empowerment. She is an alumna of Morris Brown College, Atlanta, Georgia, where she earned her Bachelor of Arts in Law &amp; Legal Studies, and Maryville University in St. Louis, where she completed her Bachelor of Science in Nursing. These institutions, along with her legal training at Washington University, form the foundation of her multidisciplinary approach. Tonya is an active member of the Mound City Bar Association and remains dedicated to advancing justice, safety, and empowerment for individuals and families throughout Missouri.</p>
+      <p><strong>Practice areas (Missouri):</strong> Family law &mdash; divorce, custody, child support, orders of protection, and crisis-related family matters. School law &mdash; student safety, bullying, negligence, special education concerns, and school-related injuries. Personal injury &mdash; medical injury, behavioral-health-related injury, trauma cases, and matters involving complex medical documentation.</p>
+    </div>
+  </div>
+</section>
+
 <section class="group-head" data-screen-label="Group — Non-Attorney Professionals">
   <div class="column"><span class="gh-rule"></span><h2>Non-Attorney Professionals</h2></div>
 </section>
@@ -216,12 +255,65 @@
     </aside>
     <div class="p-body">
       <h3 class="name">Lori A. Calloway, FNP, PMHNP</h3>
-      <p class="role">Expert Witness · Medical Malpractice</p>
+      <p class="role">Director of Operations · Expert Witness, Medical Malpractice</p>
       <p class="lede">Lori A. Calloway, FNP, PMHNP, is an experienced healthcare professional with a strong background in family practice and psychiatric mental health. As a Family Nurse Practitioner and Psychiatric Mental Health Nurse Practitioner, Lori brings a unique clinical perspective, extensive patient-care experience, and a deep understanding of the healthcare system.</p>
 
     <p>Throughout her career, Lori has been committed to providing compassionate, evidence-based care while advocating for the needs, dignity, and well-being of her patients. Her clinical experience has given her valuable insight into complex medical and mental health issues, healthcare standards, patient safety, and the challenges faced by patients and families navigating the healthcare system.</p>
 
     <p>Lori's combination of advanced clinical training and hands-on healthcare experience in critical care, family practice, and mental health allows her to offer informed professional insight in matters involving healthcare corporations, plaintiff cases, mental health, nursing practice, and other healthcare-related issues. She is dedicated to bringing knowledge, professionalism, and integrity to every matter in which she is involved.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section editorial" data-screen-label="Professional — Cal Harris">
+  <div class="ed-bg" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80');"></div>
+  <div class="ed-tint"></div>
+  <div class="column profile">
+    <aside class="p-side">
+      <div class="att-headshot"><img src="img/cal-framed.jpg" alt="Cal Harris"></div>
+      <p class="att-email"><a class="cl-inline-link" href="mailto:cal@calloway.law">cal@calloway.law</a></p>
+      <div class="bar-block">
+        <h4>Education</h4>
+        <ul class="bar-list">
+          <li><span class="jx">Morehouse College</span><span class="det">Undergraduate</span></li>
+          <li><span class="jx">Brandeis University</span><span class="det">Graduate</span></li>
+        </ul>
+      </div>
+    </aside>
+    <div class="p-body">
+      <h3 class="name">Cal Harris</h3>
+      <p class="role">Director of Communications and Public Affairs</p>
+      <p class="lede">Cal Harris leads communications and public affairs for Calloway Law. He directs national media strategy for the firm&rsquo;s public interest matters, including the 1890 Project, the multistate effort to recover the funding states owe their 1890 land grant universities, and shapes how the firm&rsquo;s cases are understood by the press, the public, and the officials who decide them.</p>
+      <p>Cal is a writer and political communications strategist whose grassroots approach to storytelling has helped clients navigate complex challenges, sharpen their narratives, and build durable connections with the audiences that matter. He has advised mayors and elected officials across the country, including Birmingham Mayor Randall Woodfin, Little Rock Mayor Frank Scott Jr., and Baltimore Mayor Brandon Scott.</p>
+      <p>Before joining the firm, Cal served as a vice president at FleishmanHillard, where he built advocacy campaigns for nonprofit and corporate clients; as communications director for the Bipartisan Policy Center and its advocacy affiliate, BPC Action; as senior communications strategist for the Council on Foundations; and as press secretary and speechwriter for StudentsFirst. He began his career in Washington as a senior associate at SKDKnickerbocker.</p>
+      <p>Based in Brooklyn, Cal is a graduate of Morehouse College and Brandeis University.</p>
+      <p style="font-style:italic; color:var(--sage-grey); font-size:14px;">Cal Harris is not an attorney and does not provide legal advice.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section editorial" data-screen-label="Professional — Tyler McFadden">
+  <div class="ed-bg" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80');"></div>
+  <div class="ed-tint"></div>
+  <div class="column profile">
+    <aside class="p-side">
+      <div class="att-headshot"><img src="img/tyler-framed-v5.jpg" alt="Tyler McFadden"></div>
+      <p class="att-email"><a class="cl-inline-link" href="mailto:tyler@calloway.law">tyler@calloway.law</a></p>
+      <div class="bar-block">
+        <h4>Education</h4>
+        <ul class="bar-list">
+          <li><span class="jx">The George Washington University</span><span class="det">Undergraduate</span></li>
+          <li><span class="jx">The George Washington University</span><span class="det">Graduate</span></li>
+        </ul>
+      </div>
+    </aside>
+    <div class="p-body">
+      <h3 class="name">Tyler McFadden</h3>
+      <p class="role">Paralegal · Public Interest</p>
+      <p class="lede">Tyler McFadden supports the firm&rsquo;s public interest practice, bringing more than a decade of experience in advocacy, campaign strategy, and coalition leadership to the firm&rsquo;s work on civil rights, environmental justice, and institutional accountability.</p>
+      <p>Their work with the firm&rsquo;s founder began at Pine Street Strategies, where she served as Principal, advising state and federal clients on organizing strategy, coalition development, and legislative campaigns. She also co-founded North Star Liberty Group, a public affairs consultancy delivering organizing strategy and advocacy support on criminal legal system and drug policy reform.</p>
+      <p>Tyler&rsquo;s career has included serving as Deputy Director of Campaigns and Mobilizations at Common Defense, leading national campaigns organizing veterans and military families, and as Campaign Director at Color Of Change, directing multi-issue campaigns across tech policy, economic justice, public health, and corporate accountability. Across these roles, she has built organizing infrastructure and led coalitions spanning movements for multiracial democracy, civil rights, and corporate accountability.</p>
+      <p>They hold a Bachelor of Arts in American Studies, with a minor in Sociology, and a Master of Professional Studies in Political Management, summa cum laude, from the George Washington University, and will begin law school in 2027 with a focus on public interest law. The firm&rsquo;s public interest practice represents a natural continuation of their career in advocacy &mdash; and the foundation for the legal career to come.</p>
     </div>
   </div>
 </section>
