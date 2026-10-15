@@ -1,0 +1,5 @@
+DirectoryIndex index.html
+DirectorySlash On
+RewriteEngine On
+RewriteCond %{THE_REQUEST} \s/+(attorney|practice|engage|disclosure)\.html[\s?#] [NC]
+RewriteRule ^ /%1/ [R=301,L]
